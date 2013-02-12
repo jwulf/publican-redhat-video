@@ -3,7 +3,7 @@
 
 Name:		publican-redhat-video
 Summary:	Common documentation files for %{brand}
-Version:	0.29
+Version:	0.30
 Release:	4%{?dist}
 License:	GPL v2
 Group:		Applications/Text
@@ -53,6 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 %{wwwdir}/%{brand}
 
 %changelog
+* Thu Feb 14 2013 Joshua Wulf <jwulf@redhat.com> 0.30
+- Incorporated JavaScript for Publican 3.1
+
 * Wed Nov 7 2012 Joshua Wulf <jwulf@redhat.com> 0.29-4
 - Added whitespace: pre-wrap to the code class, to avoid overflow
 
