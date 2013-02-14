@@ -3,7 +3,7 @@
 
 Name:		publican-redhat-video
 Summary:	Common documentation files for %{brand}
-Version:	0.30-1
+Version:	0.30
 Release:	4%{?dist}
 License:	GPL v2
 Group:		Applications/Text
