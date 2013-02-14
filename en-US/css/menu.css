@@ -167,7 +167,10 @@ span.remark{
 .code-select-li a, .code-select-li a:visited, .code-select-li a:link{
   color: #AAA;
   border-bottom: none;
-  padding-bottom: 4px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  padding-bottom: 3px;
   padding-left: 6px;
   padding-right: 6px;
   font-weight: bold;
