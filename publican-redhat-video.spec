@@ -3,7 +3,7 @@
 
 Name:		publican-redhat-video
 Summary:	Common documentation files for %{brand}
-Version:	0.30
+Version:	0.30-1
 Release:	4%{?dist}
 License:	GPL v2
 Group:		Applications/Text
@@ -53,6 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 %{wwwdir}/%{brand}
 
 %changelog
+* Thu Feb 14 2013 Joshua Wulf <jwulf@redhat.com> 0.30-1
+- Added codetab borders to menu.css
+
 * Thu Feb 14 2013 Joshua Wulf <jwulf@redhat.com> 0.30
 - Incorporated JavaScript for Publican 3.1
 
