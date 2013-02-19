@@ -9,12 +9,29 @@
 <xsl:import href="../../../xsl/html.xsl"/>
 <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml/graphics.xsl"/>
 
+
+<!-- set the onload of the page -->
+<!-- http://www.sagehill.net/docbookxsl/BodyAtts.html -->
+<xsl:template name="body.attributes">
+  <xsl:attribute name="onLoad">skynetBookLoad()</xsl:attribute>
+  <xsl:attribute name="itemscope"/>
+  <xsl:attribute name="itemtype">http://schema.org/TechArticle</xsl:attribute>
+</xsl:template>
+
+<xsl:template name="user.header.content">
+  <meta itemprop="aboutProduct">
+    <xsl:attribute name="content">
+      <xsl:value-of select="concat(//productname[1], ' ', //productnumber[1])"/>
+    </xsl:attribute>
+  </meta>
+</xsl:template>
+
 <!-- inject our javascript into the footer -->
 <!-- http://www.sagehill.net/docbookxsl/InsertExtHtml.html -->
 <!-- Inject a div.skynetBookID with Product_Name/Book_Name
   This is used for cookies for the book -->
 <xsl:template name="user.footer.content">
-  <div class="skynetBookID"><xsl:value-of select="//productname[1]"/>/<xsl:value-of select="//title[1]"/></div>
+  <div class="skynetBookID"><xsl:value-of select="//productname[1]"/>/<xsl:value-of select="//title[1]"/>/<xsl:value-of select="//productnumber[1]"/></div>
   <xsl:choose>
     <xsl:when test="$embedtoc != 0">
     <!-- web path -->
@@ -60,14 +77,10 @@
   </xsl:choose>
 </xsl:template>
 
-<!-- set the onload of the page -->
-<!-- http://www.sagehill.net/docbookxsl/BodyAtts.html -->
-<xsl:template name="body.attributes">
-  <xsl:attribute name="onLoad">skynetBookLoad()</xsl:attribute>
-</xsl:template>
+
 
 <!-- depth of section labelling -->
-<xsl:param name="section.autolabel.max.depth" select="2"/>
+<xsl:param name="section.autolabel.max.depth" select="3"/>
 
 <!-- Make videos work in Firefox -->
 <xsl:template match="videoobject">

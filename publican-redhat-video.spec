@@ -3,8 +3,8 @@
 
 Name:		publican-redhat-video
 Summary:	Common documentation files for %{brand}
-Version:	0.31
-Release:	1%{?dist}
+Version:	0.40
+Release:	0%{?dist}
 License:	GPL v2
 Group:		Applications/Text
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -53,6 +53,12 @@ rm -rf $RPM_BUILD_ROOT
 %{wwwdir}/%{brand}
 
 %changelog
+* Wed Feb 20 2013 Joshua Wulf <jwulf@redhat.com> 0.40
+- Added support for topic change logs
+
+* Fri Feb 15 2013 Joshua Wulf <jwulf@redhat.com> 0.31-2
+- Added master selector css
+
 * Thu Feb 14 2013 Joshua Wulf <jwulf@redhat.com> 0.31
 - Added codetab borders to menu.css
 
