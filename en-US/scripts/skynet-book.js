@@ -32,11 +32,15 @@ function changelogClick(e){
 	});
 
 	// Close all the changelogs
-	$('.changelog-items').removeClass('changelog-visible');
-
+	$(parentSection).find('.changelog-visible').removeClass('changelog-visible');
+    
 	// Open this one if it wasn't already open
 	if ( ! alreadyOpen ) 
+    {
 		$(parentSection).find('.changelog-items').addClass('changelog-visible');
+    } else { // otherwise turn off the highlights for this section
+        $(parentSection).find('.changes-highlight').removeClass('changes-highlight');
+    }
 }
 
 function changelogItemClick(e){
@@ -50,16 +54,16 @@ function changelogItemClick(e){
         }    
     });
 
-    var alreadyClicked = $(this).hasClass('.changes-highlight');
+    var alreadyClicked = $(this).hasClass('changes-highlight');
     
     $('.changes-highlight').removeClass('changes-highlight');
     
     if ( ! alreadyClicked ) {
-	    $(this).addClass('changes-highlight');
-    	for (className in classes) {
-    		if (className.substring(0,10) === 'changelog-') {
-	    		$('.' + 'changes-' + className.substring(10)).addClass('changes-highlight');
-	    	}
-    	}
+        $(this).addClass('changes-highlight');
+        for (var className in classes) {
+            if (className.substring(0,10) === 'changelog-') {
+                $('.' + 'changes-' + className.substring(10)).addClass('changes-highlight');
+            }
+        }
     }
 }

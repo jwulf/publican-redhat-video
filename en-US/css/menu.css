@@ -1,15 +1,44 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,400,600);
 
+/* @font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url(jmle3kzCPnW8O7_gZGRDlQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+} 
+*/
+
 /* The Publican website menu.css has a line-height set to 1em */
 
 body, h1, h2, h3, h4, h5, h6, pre, li, div {
-	line-height: normal;
+    line-height: normal;
 }
 
-/*.changelog-toggle {
-    color:#0066cc;
-    border-bottom: 1px dotted;
-}*/
+.changelog-toggle {
+  display: none;
+}
+
+.changelog-toggle-visible {
+  display: block;
+}
 
 .changelog-items {
   display: none;
@@ -30,8 +59,8 @@ body, h1, h2, h3, h4, h5, h6, pre, li, div {
 .simplesect:after{content:""; display: block; clear: both; height:0px; width: 100%; float:none;}
 
 .RoleCreateBugPara a{
-  padding: 0em 0.8em 0.2em;
-  background-color:white; 
+  padding:  0em 0.8em 0.2em;
+  background-color:white;
   margin:0em .5em;
   font-size:12px; 
   color: lightgray;
@@ -95,6 +124,7 @@ ul.codetabs-selector li a:active{background-color:#345; color:#fff; box-shadow: 
 /* 
     End Master selector for tabbed code samples
 */
+
 /* Aesthetic changes */
 
 pre {
@@ -229,22 +259,22 @@ span.remark{
 }
 
 .codetabs ul{
-  padding-left: 2.6em;
-  padding-bottom: 8px;
+    padding-left: 2.6em;
+    padding-bottom: 8px;
 }
 
 .code-select-li a, .code-select-li a:visited, .code-select-li a:link{
-  color: #AAA;
-  background-color: #eeeeee;
-  border-bottom: none;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-weight: bold;
-  position: relative;
+    color: #AAA;
+    background-color: #eeeeee;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-weight: bold;
+    position: relative;
 }
 
 .code-select-li a:hover{
@@ -252,13 +282,20 @@ span.remark{
 }
 
 .code-select-li a.active {
-  color: white;
-  background-color: #AAA;
+    color: white;
+    background-color: #AAA;
+          border-top: 1px solid;
+         border-left: 1px solid;
+        border-right: 1px solid;  
+       border-radius: 0.5em 0.5em 0 0;
+      padding-bottom: 4px;
 }
 
 .code-select-li a.active:hover {
   border-bottom: none;
 }
+
+.code-select-li a.active { border-bottom: none}
 
 .set-as-default {
     position: absolute; 
@@ -271,12 +308,12 @@ span.remark{
 }
 
 .set-as-default,
-.set-as-default a{ 
+.set-as-default a { 
      -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
          -ms-transition: all 1s ease;
              transition: all 1s ease; 
-         border-radius: .5em .5em 0em 0em ;}
+          border-radius: .5em .5em 0em 0em ;}
 
 .set-as-default,
 .set-as-default a, 
@@ -284,6 +321,7 @@ span.remark{
 .set-as-default a:visited {
     opacity:0; 
     color: red;
+    border-bottom: none;
 }
 
 .set-as-default-visible,

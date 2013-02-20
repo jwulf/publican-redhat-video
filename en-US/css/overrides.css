@@ -259,22 +259,22 @@ span.remark{
 }
 
 .codetabs ul{
-  padding-left: 2.6em;
-  padding-bottom: 8px;
+    padding-left: 2.6em;
+    padding-bottom: 8px;
 }
 
 .code-select-li a, .code-select-li a:visited, .code-select-li a:link{
-  color: #AAA;
-  background-color: #eeeeee;
-  border-bottom: none;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-weight: bold;
-  position: relative;
+    color: #AAA;
+    background-color: #eeeeee;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-weight: bold;
+    position: relative;
 }
 
 .code-select-li a:hover{
@@ -282,16 +282,20 @@ span.remark{
 }
 
 .code-select-li a.active {
-  color: white;
-  background-color: #AAA;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;  
+    color: white;
+    background-color: #AAA;
+          border-top: 1px solid;
+         border-left: 1px solid;
+        border-right: 1px solid;  
+       border-radius: 0.5em 0.5em 0 0;
+      padding-bottom: 4px;
 }
 
 .code-select-li a.active:hover {
   border-bottom: none;
 }
+
+.code-select-li a.active { border-bottom: none}
 
 .set-as-default {
     position: absolute; 
@@ -309,7 +313,7 @@ span.remark{
         -moz-transition: all 1s ease;
          -ms-transition: all 1s ease;
              transition: all 1s ease; 
-         border-radius: .5em .5em 0em 0em ;}
+          border-radius: .5em .5em 0em 0em ;}
 
 .set-as-default,
 .set-as-default a, 
@@ -317,6 +321,7 @@ span.remark{
 .set-as-default a:visited {
     opacity:0; 
     color: red;
+    border-bottom: none;
 }
 
 .set-as-default-visible,
