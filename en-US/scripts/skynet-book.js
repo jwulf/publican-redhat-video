@@ -6,6 +6,7 @@ function skynetBookLoad(){
 function setUpChangeLogs(){
 	$('.changelog-toggle').click(changelogClick);
 	$('.changelog-toggle').each(function(){
+		$(this).addClass('changelog-toggle-visible');
 		$(this).html('<a href="#">' + $(this).html() + '</a>');
 	});
 
@@ -21,32 +22,44 @@ function setUpChangeLogs(){
 
 function changelogClick(e){
 	e.preventDefault();
-	var parentSection = $(this).closest('.section');
+
+	var alreadyOpen = false,
+		parentSection = $(this).closest('.section'); // Go up to the root of this topic
+	
+	// Check if this one is already open 
 	$(parentSection).find('.changelog-items').each(function(){
-		if ($(this).hasClass('changelog-visible')) {
-			$(this).removeClass('changelog-visible');
-			$('.changes-highlight').removeClass('changes-highlight');
-		} else {	
-			// $('.changelog-visible').removeClass('changelog-visible');		
-			$(this).addClass('changelog-visible');
-		}
+		alreadyOpen = $(this).hasClass('changelog-visible');
 	});
+
+	// Close all the changelogs
+	$('.changelog-items').removeClass('changelog-visible');
+
+	// Open this one if it wasn't already open
+	if ( ! alreadyOpen ) 
+		$(parentSection).find('.changelog-items').addClass('changelog-visible');
 }
 
 function changelogItemClick(e){
 	e.preventDefault();
+
 	var classes= {};
+	
 	$($(this).attr('class').split(' ')).each(function() { 
         if (this !== '') {
             classes[this] = this;
         }    
     });
-    $('.changes-highlight').removeClass('changes-highlight');
-    $(this).addClass('changes-highlight');
-    for (className in classes) {
-    	if (className.substring(0,10) === 'changelog-') {
-	    	$('.' + 'changes-' + className.substring(10)).addClass('changes-highlight');
 
+    var alreadyClicked = $(this).hasClass('.changes-highlight');
+    
+    $('.changes-highlight').removeClass('changes-highlight');
+    
+    if ( ! alreadyClicked ) {
+	    $(this).addClass('changes-highlight');
+    	for (className in classes) {
+    		if (className.substring(0,10) === 'changelog-') {
+	    		$('.' + 'changes-' + className.substring(10)).addClass('changes-highlight');
+	    	}
     	}
     }
 }
