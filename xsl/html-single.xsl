@@ -14,17 +14,17 @@ href="http://docbook.sourceforge.net/release/xsl/current/xhtml/graphics.xsl"/>
 <!-- set the onload of the page -->
 <!-- http://www.sagehill.net/docbookxsl/BodyAtts.html -->
 <xsl:template name="body.attributes">
-  <xsl:attribute name="onLoad">skynetBookLoad()</xsl:attribute>
-  <xsl:attribute name="itemscope"/>
-  <xsl:attribute name="itemtype">http://schema.org/TechArticle</xsl:attribute>
+    <xsl:attribute name="onLoad">skynetBookLoad()</xsl:attribute>
+    <xsl:attribute name="itemscope"/>
+    <xsl:attribute name="itemtype">http://schema.org/TechArticle</xsl:attribute>
 </xsl:template>
 
 <xsl:template name="user.header.content">
-  <meta itemprop="aboutProduct">
-    <xsl:attribute name="content">
-      <xsl:value-of select="concat(//productname[1], ' ', //productnumber[1])"/>
-    </xsl:attribute>
-  </meta>
+    <meta itemprop="aboutProduct">
+        <xsl:attribute name="content">
+        <xsl:value-of select="concat(//productname[1], ' ', //productnumber[1])"/>
+        </xsl:attribute>
+    </meta>
 </xsl:template>
 
 <!-- inject our javascript into the footer -->
@@ -41,41 +41,41 @@ href="http://docbook.sourceforge.net/release/xsl/current/xhtml/graphics.xsl"/>
           <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/jquery-1.4.2.min.js')"/>
         </xsl:attribute>
       </script>
-
-      <script type="text/javascript">
-        <xsl:attribute name="src">
-          <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/0-constants.js')"/>
-        </xsl:attribute>
-      </script>
       
       <script type="text/javascript">
         <xsl:attribute name="src">
           <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/code-lang-switcher.js')"/>
         </xsl:attribute>
       </script>
+
+        <script type="text/javascript">
+            <xsl:attribute name="src">
+                <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/changelogs.js')"/>
+            </xsl:attribute>
+        </script>
       
-      <script type="text/javascript">
-        <xsl:attribute name="src">
-          <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/skynet-book.js')"/>
-        </xsl:attribute>
-      </script>
+        <script type="text/javascript">
+            <xsl:attribute name="src">
+                <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/skynet-book.js')"/>
+            </xsl:attribute>
+        </script>
     </xsl:when>
     <xsl:otherwise>
-      <!-- desktop path -->
-      <script type="text/javascript">
-        <xsl:attribute name="src">Common_Content/scripts/jquery-1.4.2.min.js</xsl:attribute>
-      </script>
-      <script type="text/javascript">
-        <xsl:attribute name="src">Common_Content/scripts/0-constants.js</xsl:attribute>
-      </script>
-      <script type="text/javascript">
-        <xsl:attribute name="src">Common_Content/scripts/code-lang-switcher.js</xsl:attribute>
-      </script>
-      <script type="text/javascript">
-        <xsl:attribute name="src">Common_Content/scripts/skynet-book.js</xsl:attribute>
-      </script>
-    </xsl:otherwise>
-  </xsl:choose>
+        <!-- desktop path -->
+        <script type="text/javascript">
+            <xsl:attribute name="src">Common_Content/scripts/jquery-1.4.2.min.js</xsl:attribute>
+        </script>
+        <script type="text/javascript">
+            <xsl:attribute name="src">Common_Content/scripts/0-constants.js</xsl:attribute>
+        </script>
+        <script type="text/javascript">
+            <xsl:attribute name="src">Common_Content/scripts/code-lang-switcher.js</xsl:attribute>
+        </script>
+        <script type="text/javascript">
+            <xsl:attribute name="src">Common_Content/scripts/skynet-book.js</xsl:attribute>
+        </script>
+        </xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
 
