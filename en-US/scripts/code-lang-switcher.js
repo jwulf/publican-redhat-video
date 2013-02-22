@@ -272,7 +272,7 @@ function setUpCodeTabs()
         // Now move the page back to the element we were at before
         // http://answers.oreilly.com/topic/1626-how-to-center-an-element-within-the-viewport-using-jquery/
         $(window).scrollTop(thisElement.offset().top - viewportOffset);
-        setProgrammingLanguageCookie(desiredDefault);
+        setDefaultProgrammingLanguageViaCookie(desiredDefault);
     }
 }
 
