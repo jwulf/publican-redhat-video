@@ -40,6 +40,12 @@
                     <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/jquery-1.4.2.min.js')"/>
                 </xsl:attribute>
             </script>
+
+        <script type="text/javascript">
+            <xsl:attribute name="src">
+                <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/utils.js')"/>
+            </xsl:attribute>
+        </script>
           
             <script type="text/javascript">
                 <xsl:attribute name="src">
@@ -52,7 +58,6 @@
                     <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/changelogs.js')"/>
                 </xsl:attribute>
             </script>
-          
           
             <script type="text/javascript">
                 <xsl:attribute name="src">
@@ -67,11 +72,15 @@
             </script>
 
             <script type="text/javascript">
-                <xsl:attribute name="src">Common_Content/scripts/0-constants.js</xsl:attribute>
+                <xsl:attribute name="src">Common_Content/scripts/utils.js</xsl:attribute>
             </script>
       
             <script type="text/javascript">
                 <xsl:attribute name="src">Common_Content/scripts/code-lang-switcher.js</xsl:attribute>
+            </script>
+
+            <script type="text/javascript">
+                <xsl:attribute name="src">Common_Content/scripts/changelogs.js</xsl:attribute>
             </script>
 
             <script type="text/javascript">

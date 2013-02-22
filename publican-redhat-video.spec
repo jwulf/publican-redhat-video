@@ -3,7 +3,7 @@
 
 Name:		publican-redhat-video
 Summary:	Common documentation files for %{brand}
-Version:	0.41
+Version:	0.42
 Release:	0%{?dist}
 License:	GPL v2
 Group:		Applications/Text
@@ -53,6 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 %{wwwdir}/%{brand}
 
 %changelog
+* Mon Feb 26 2013 Joshua Wulf <jwulf@redhat.com> 0.42 
+- Cookie support for persistent default programming language
+
 * Mon Feb 26 2013 Joshua Wulf <jwulf@redhat.com> 0.41
 - Enhanced topic change log behavior
 - Added default programming language selector at each code tab

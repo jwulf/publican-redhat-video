@@ -44,18 +44,6 @@ In Docbook, the author creates a variablelist with the role "codetabs". For exam
 
 
 
-function setCookie(bookname, bookver, codelang) {
-    var exdate = new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-    var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-    document.cookie = c_name + "=" + c_value;
-}
-
-
-function getCookie(bookname, bookver, codelang) {
-    var tab = 0;
-}
-
 // http://stackoverflow.com/questions/11509555/insert-new-list-sorted-in-alphabetical-order-javascript-or-jquery 
 function addNewListItem($list, $element) { // inserts a listitem in alphabetical order
     var listItems;
@@ -258,8 +246,12 @@ function setUpCodeTabs()
 
     // if there *are* codetabs in this book, then show the Codetabs 
     // introductory section
-    if (thisBookHasCodeTabs) showIntroSection(tabsInBook);
-
+    if (thisBookHasCodeTabs) {
+        showIntroSection(tabsInBook); // going to deprecate this now we have pervasive default setting
+        var myDefault = getDefaultProgrammingLanguageFromCookie();
+        if (myDefault) switchBookToProgrammingLanguage (myDefault);
+    }
+    
     // The document has resized. If the user opened it on a named anchor, take
     // them to the new location for that point
     if (currentNamedAnchor && currentNamedAnchor != '#') $('html, body').animate({
@@ -275,22 +267,29 @@ function setUpCodeTabs()
         var viewportOffset = thisElement.offset().top - getPageScroll()[1];
         
         // Set all codetabs in the book to the default
+        switchBookToProgrammingLanguage(desiredDefault);
+        
+        // Now move the page back to the element we were at before
+        // http://answers.oreilly.com/topic/1626-how-to-center-an-element-within-the-viewport-using-jquery/
+        $(window).scrollTop(thisElement.offset().top - viewportOffset);
+        setProgrammingLanguageCookie(desiredDefault);
+    }
+}
+
+function switchBookToProgrammingLanguage (programmingLanguage) {
+        
+        // Set all codetabs in the book to the default
         $('div.codetabs').each(function() 
         {
-            var codesample = $(this).find('.code-lang-' + desiredDefault);
+            var codesample = $(this).find('.code-lang-' + programmingLanguage);
             if (codesample.length > 0) 
             {
                 $(this).find('dd').hide();
                 codesample.show();
                 $(this).find('a').removeClass('active');
-                $(this).find('a[rel="' + desiredDefault + '"]').addClass('active');
+                $(this).find('a[rel="' + programmingLanguage + '"]').addClass('active');
             }
-        });
-        
-        // Now move the page back to the element we were at before
-        // http://answers.oreilly.com/topic/1626-how-to-center-an-element-within-the-viewport-using-jquery/
-        $(window).scrollTop(thisElement.offset().top - viewportOffset);
-    }
+        });    
 }
 
 // http://stackoverflow.com/questions/1567327/using-jquery-to-get-elements-position-relative-to-viewport

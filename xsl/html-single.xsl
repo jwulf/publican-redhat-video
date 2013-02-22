@@ -32,21 +32,28 @@ href="http://docbook.sourceforge.net/release/xsl/current/xhtml/graphics.xsl"/>
 <!-- Inject a div.skynetBookID with Product_Name/Book_Name
   This is used for cookies for the book -->
 <xsl:template name="user.footer.content">
-  <div class="skynetBookID"><xsl:value-of select="//productname[1]"/>/<xsl:value-of select="//title[1]"/>/<xsl:value-of select="//productnumber[1]"/></div>
- <xsl:choose>
-    <xsl:when test="$embedtoc != 0">
-    <!-- web path -->
-      <script type="text/javascript">
-        <xsl:attribute name="src">
-          <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/jquery-1.4.2.min.js')"/>
-        </xsl:attribute>
-      </script>
-      
-      <script type="text/javascript">
-        <xsl:attribute name="src">
-          <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/code-lang-switcher.js')"/>
-        </xsl:attribute>
-      </script>
+    <div class="skynetBookID"><xsl:value-of select="//productname[1]"/>/<xsl:value-of select="//title[1]"/>/<xsl:value-of select="//productnumber[1]"/></div>
+    <xsl:choose>
+        <xsl:when test="$embedtoc != 0">
+        <!-- web path -->
+
+        <script type="text/javascript">
+            <xsl:attribute name="src">
+                <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/jquery-1.4.2.min.js')"/>
+            </xsl:attribute>
+        </script>
+
+        <script type="text/javascript">
+            <xsl:attribute name="src">
+                <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/utils.js')"/>
+            </xsl:attribute>
+        </script>
+
+        <script type="text/javascript">
+            <xsl:attribute name="src">
+                <xsl:value-of select="concat($tocpath, '/../', $brand, '/', $langpath, '/scripts/code-lang-switcher.js')"/>
+            </xsl:attribute>
+        </script>
 
         <script type="text/javascript">
             <xsl:attribute name="src">
@@ -66,10 +73,13 @@ href="http://docbook.sourceforge.net/release/xsl/current/xhtml/graphics.xsl"/>
             <xsl:attribute name="src">Common_Content/scripts/jquery-1.4.2.min.js</xsl:attribute>
         </script>
         <script type="text/javascript">
-            <xsl:attribute name="src">Common_Content/scripts/0-constants.js</xsl:attribute>
+            <xsl:attribute name="src">Common_Content/scripts/utils.js</xsl:attribute>
         </script>
         <script type="text/javascript">
             <xsl:attribute name="src">Common_Content/scripts/code-lang-switcher.js</xsl:attribute>
+        </script>
+        <script type="text/javascript">
+            <xsl:attribute name="src">Common_Content/scripts/changelogs.js</xsl:attribute>
         </script>
         <script type="text/javascript">
             <xsl:attribute name="src">Common_Content/scripts/skynet-book.js</xsl:attribute>
