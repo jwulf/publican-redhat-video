@@ -5,12 +5,10 @@
 	<title>Document Conventions</title>
 	
 	<para>This manual has several features to aid you to discover relevant information and provide feedback.</para>
-	 <para>
-		This manual also uses several conventions to highlight certain words and phrases and draw attention to specific pieces of information.
-	</para>
+	 
 	<section>
 		<title>Report a Bug Links</title>
-		<para>Each section in this book has an unobtrusive link at the bottom on the right-hand margin. This link allows you to easily provide feedback about a specific section. Use this link when you encounter incorrect or incomplete information, or would like to suggest or request an alteration or addition.</para>
+		<para>In the HTML version, each section in this manual has a link at the bottom on the right-hand margin. This link allows you to easily provide feedback about a specific section. Use this link when you encounter incorrect or incomplete information, or would like to suggest or request an alteration or addition.</para>
 	</section>
 	<section>
 		<title>Programming Language Selection</title>
@@ -22,6 +20,10 @@
 </para> -->
 	 <section>
 		<title>Typographic Conventions</title>
+		
+		<para>
+		This manual also uses several conventions to highlight certain words and phrases and draw attention to specific pieces of information.
+	</para>
 		 <para>
 			Four typographic conventions are used to call attention to specific words and phrases. These conventions, and the circumstances they apply to, are as follows.
 		</para>
@@ -160,4 +162,4 @@ books_tests  Desktop1  downloads      images  notes  scripts  svgs</screen>
 	</section>
 
 </section>
-</section>
+
