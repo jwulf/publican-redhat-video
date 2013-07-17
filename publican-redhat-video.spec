@@ -3,8 +3,8 @@
 
 Name:		publican-redhat-video
 Summary:	Common documentation files for %{brand}
-Version:	0.43
-Release:	2%{?dist}
+Version:	0.44
+Release:	0%{?dist}
 License:	GPL v2
 Group:		Applications/Text
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 
-* Wed Jul 16 2012 Joshua Wulf <jwulf@redhat.com> 0.43-2
+* Wed Jul 16 2012 Joshua Wulf <jwulf@redhat.com> 0.44
 - Fixed codetabs text color
 
 * Thu Jul 12 2013 Joshua Wulf <jwulf@redhat.com> 0.43
